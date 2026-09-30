@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ivory: #faf7f1;
+  --color-parchment: #f2ebdf;
+  --color-linen: #ece2d0;
+  --color-sand: #ddcfae;
+  --color-charcoal: #1e1a14;
+  --color-bark: #2c251b;
+  --color-stone-warm: #6f6455;
+  --color-brass: #a98548;
+  --color-brass-deep: #7d5f31;
+  --color-brass-soft: #d9c193;
+
+  --font-display: var(--font-fraunces), "Georgia", serif;
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Signature arch shape — tall round-top portal */
+.arch {
+  border-radius: 999px 999px 26px 26px;
+}
+.arch-sm {
+  border-radius: 999px 999px 18px 18px;
+}
+
+/* Scroll-reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Gentle float for hero chips */
+@keyframes drift {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+.animate-drift {
+  animation: drift 5s ease-in-out infinite;
+}
+.animate-drift-slow {
+  animation: drift 7s ease-in-out infinite;
+}
+
+/* Marquee */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+}
+
+/* Outlined watermark type */
+.text-outline {
+  -webkit-text-stroke: 1px rgba(169, 133, 72, 0.35);
+  color: transparent;
+}
+
+::selection {
+  background: #a98548;
+  color: #faf7f1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .animate-drift,
+  .animate-drift-slow,
+  .animate-marquee {
+    animation: none;
+  }
+}
