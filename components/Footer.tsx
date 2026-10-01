@@ -69,7 +69,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-ivory/10 pt-8 text-xs text-ivory/45 sm:flex-row">
-          <p>© 2026 Makaan Studio. A fictional demo website.</p>
+          <p>© 2026 Makaan Studio. A fictional demo website. · Designed &amp; built by <a href="https://akclnt.com" className="text-ivory/70 underline-offset-4 hover:underline">AKCLNT</a></p>
           <p>Lahore · Islamabad · Karachi</p>
         </div>
       </div>
